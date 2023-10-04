@@ -1,0 +1,38 @@
+apiVersion: carto.run/v1alpha1
+kind: Deliverable
+metadata:
+  creationTimestamp: "2023-09-26T15:51:43Z"
+  generation: 5
+  labels:
+    app.kubernetes.io/component: deliverable
+    app.kubernetes.io/part-of: test-app23
+    app.tanzu.vmware.com/deliverable-type: web
+    apps.tanzu.vmware.com/workload-type: web
+    carto.run/cluster-template-name: deliverable-template
+    carto.run/resource-name: deliverable
+    carto.run/supply-chain-name: source-to-url
+    carto.run/template-kind: ClusterTemplate
+    carto.run/template-lifecycle: mutable
+    carto.run/workload-name: test-app23
+    carto.run/workload-namespace: develop
+  name: test-app23
+  namespace: develop
+  ownerReferences:
+  - apiVersion: carto.run/v1alpha1
+    blockOwnerDeletion: true
+    controller: true
+    kind: Workload
+    name: test-app23
+    uid: 80c97fc1-4a78-4665-982b-c529b28d805e
+  resourceVersion: "38483652"
+  uid: a938e983-01e9-4d18-bae0-6a61db5ea097
+spec:
+  params:
+  - name: gitops_ssh_secret
+    value: ""
+  source:
+    git:
+      ref:
+        branch: test
+      url: https://github.com/tsfrt/tap-gitops.git
+    subPath: config/develop/test-app23

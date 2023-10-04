@@ -1,0 +1,17 @@
+apiVersion: kappctrl.k14s.io/v1alpha1
+kind: App
+metadata:
+  name: test-app
+spec:
+  serviceAccountName: default
+  fetch:
+  - git:
+      url: https://github.com/tsfrt/platform-config
+      ref: origin/main
+      subPath: test
+
+  template:
+  - ytt: {}
+
+  deploy:
+  - kapp: {}
