@@ -1,0 +1,13 @@
+
+apiVersion: v1
+kind: Secret
+metadata:
+  name: oracle-db-secret
+  namespace: develop
+type: servicebinding.io/oracle
+stringData:
+  type: oracle
+  provider: internal
+  connectionString: 192.168.103.154:1521/XEPDB1
+  username: app
+  password: password
