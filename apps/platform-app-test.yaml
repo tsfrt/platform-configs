@@ -2,16 +2,15 @@ apiVersion: kappctrl.k14s.io/v1alpha1
 kind: App
 metadata:
   name: test-app
+  namespace: platform-config
 spec:
-  serviceAccountName: default
+  serviceAccountName: platform-config-ns-sa
   fetch:
   - git:
-      url: https://github.com/tsfrt/platform-config
+      url: https://github.com/tsfrt/platform-configs
       ref: origin/main
       subPath: test
-
   template:
   - ytt: {}
-
   deploy:
   - kapp: {}
